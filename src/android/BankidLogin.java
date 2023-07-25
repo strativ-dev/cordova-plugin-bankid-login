@@ -12,7 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 /**
- * This class echoes a string called from JavaScript.
+ * This class open Bankid app with auto start token.
  */
 public class BankidLogin extends CordovaPlugin {
     public static final String TAG = "Bankid Plugin";
@@ -63,7 +63,6 @@ public class BankidLogin extends CordovaPlugin {
             intent.setAction(Intent.ACTION_VIEW);
             intent.setData(Uri.parse("https://app.bankid.com/?autostarttoken="+auth_token+"&redirect=null ")) ;
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            // startActivity(intent);
             cordova.getActivity().startActivity(intent);
 
             callback.sendPluginResult(pluginResult);

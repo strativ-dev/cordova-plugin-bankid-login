@@ -3,7 +3,7 @@
 		xmlns="http://apache.org/cordova/ns/plugins/1.0"
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		id="cordova-plugin-bankid-login"
-		version="0.4.0">
+		version="1.0.0">
 
 	<name>BankidLogin</name>
 
@@ -40,6 +40,5 @@
 			</feature>
 		</config-file>
 		<source-file src="src/android/BankidLogin.java" target-dir="src/se/strativ/bankidlogin" />
-		<!-- <source-file src="src/android/ParseTypes.java" target-dir="src/com/hutchind/cordova/plugins/launcher" /> -->
 	</platform>
 </plugin>
