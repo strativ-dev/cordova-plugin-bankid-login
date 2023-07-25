@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-bankid-login",
+  "version": "0.0.1",
+  "description": "This plugin allows you to authenticate and identify users with bankid app.",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "keywords": [
+    "cordova",
+    "bank-id",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Strativ AB",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}
