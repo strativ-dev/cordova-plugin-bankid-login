@@ -8,6 +8,8 @@ Last version 1.0.0
 
 ```
 cordova plugin add https://github.com/strativ-dev/cordova-plugin-bankid-login.git
+
+cordova prepare
 ```
 
 > Delete:
