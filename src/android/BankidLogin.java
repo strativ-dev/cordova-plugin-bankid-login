@@ -22,7 +22,8 @@ public class BankidLogin extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException, JSONException {
         if (action.equals("loginWithBankId")) {
             String auth_token = args.getString(0);
-            this.openBankId(auth_token, callbackContext);
+            String redirect = args.getString(1);
+            this.openBankId(auth_token,redirect, callbackContext);
             return true;
         }
         return false;
@@ -53,7 +54,7 @@ public class BankidLogin extends CordovaPlugin {
             this.callbackContext.sendPluginResult(pluginResult);
         }
     }
-    private void openBankId(String auth_token, CallbackContext callback) {
+    private void openBankId(String auth_token,String redirect, CallbackContext callback) {
         PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
         pluginResult.setKeepCallback(true);
         this.callbackContext = callback;
@@ -61,7 +62,7 @@ public class BankidLogin extends CordovaPlugin {
         if (auth_token != null && auth_token.length() > 0) {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://app.bankid.com/?autostarttoken="+auth_token+"&redirect=null ")) ;
+            intent.setData(Uri.parse("https://app.bankid.com/?autostarttoken="+auth_token+"&redirect="+redirect)) ;
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             cordova.getActivity().startActivity(intent);
 

@@ -7,10 +7,12 @@
 
 - (void)loginWithBankId:(CDVInvokedUrlCommand*)command {
 	NSString *token = [command.arguments objectAtIndex:0];
+	NSString *redirect = [command.arguments objectAtIndex:1];
     __block CDVPluginResult * pluginResult = nil;
+    
 	if (token && [token length] > 0) {
         NSLog(@"NSString2 = %@", token);
-        NSString *url = [NSString stringWithFormat:@"https://app.bankid.com/?autostarttoken=%@&redirect=null", token];
+        NSString *url = [NSString stringWithFormat:@"https://app.bankid.com/?autostarttoken=%@&redirect=%@", token,redirect];
         NSURL *bankIdLink = [NSURL URLWithString:url];
 
         if ([[UIApplication sharedApplication] canOpenURL:bankIdLink]) {
