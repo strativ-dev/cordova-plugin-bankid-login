@@ -22,7 +22,10 @@ _Example_
 
 ```javascript
 window?.plugins?.bankidLogin(
-  token,
+  {
+    token: token,
+    redirectUrl: "null", // custom app url;
+  },
   (response) => {
     console.log("bankidLogin:response", response);
   },
